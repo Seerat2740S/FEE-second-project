@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Later</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-600">
+    <div class="sidebar">
+        <a href="/index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+              </svg>
+        </a>
+        <a href="/watchLater.html">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M4 8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8z" />
+                <path fill-rule="evenodd" d="M8 4a2 2 0 0 1 4 0v1a2 2 0 0 1-4 0V4zM6 10a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-5z" clip-rule="evenodd" />
+            </svg>
+        </a>
+        <a href="/recommendedMovies.html">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 3a1 1 0 0 1 .55.17l4.66 2.76a1 1 0 0 1 .55.89V13a1 1 0 0 1-.55.89l-4.66 2.76a1 1 0 0 1-1.1 0l-4.66-2.76A1 1 0 0 1 4 13V6.83a1 1 0 0 1 .55-.89l4.66-2.76A1 1 0 0 1 10 3zM5 5.45v9.1L9.6 10 5 5.45z" clip-rule="evenodd" />
+            </svg>
+        </a>
+    </div>
+    <nav class="bg-gray-900 border-gray-200 dark:bg-gray-900">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">CinePulse</span>
+            </a>
+            <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-200 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+            <div class="hidden md:flex md:w-auto" id="navbar-default">
+                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-900 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-gray-900 dark:bg-gray-900 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a href="/watchLater.html" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Watch Later</a>
+                    </li>
+                    <li>
+                        <a href="/recommendedMovies.html" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Surprise Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+      
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold text-white mb-4">Watch Later</h1>
+        <div id="watchLaterMovies" class="grid grid-cols-2 gap-4"></div>
+    </div>
+<!--Footer container-->
+<footer class="bg-gray-800 mb-0 text-white rounded-lg shadow dark:bg-gray-900 relative bottom-0 left-0 w-full">        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CinePulse</span>
+            </a>
+            <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Watch Later</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline me-4 md:me-6">Surprise</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="/index.html" class="hover:underline">CinePulse</a>. All Rights Reserved.</span>
+    </div>
+</footer>
+    <script src="script.js"></script>
+    <script>
+        const watchLaterList = JSON.parse(localStorage.getItem('watchLater')) || [];
+
+        // Function to display watch later movies
+        function displayWatchLaterMovies() {
+            const watchLaterContainer = document.getElementById('watchLaterMovies');
+            watchLaterContainer.innerHTML = ''; // Clear previous results
+            watchLaterList.forEach(movieId => {
+                // Fetch movie details for each movie ID in the watch later list
+                fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${movieId}`)
+                    .then(response => response.json())
+                    .then(movie => {
+                        const movieCard = document.createElement('div');
+                        movieCard.classList.add('bg-white', 'p-4', 'rounded-md', 'shadow-md');
+                        movieCard.innerHTML = `
+                            <img src="${movie.Poster}" alt="${movie.Title}" class="w-full mb-4">
+                            <h2 class="text-lg font-semibold mb-2">${movie.Title}</h2>
+                            <p class="text-gray-600 mb-2">Year: ${movie.Year}</p>
+                        `;
+                        watchLaterContainer.appendChild(movieCard);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching movie details:', error);
+                    });
+            });
+        }
+
+        // Display watch later movies when the page loads
+        displayWatchLaterMovies();
+    </script>
+</body>
+</html>
